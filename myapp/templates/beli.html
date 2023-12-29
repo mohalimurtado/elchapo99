@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produk</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8;
+            color: #333;
+        }
+
+        header {
+            background-color: #e44d26;
+            color: #fff;
+            padding: 10px 20px;
+            text-align: center;
+        }
+
+        nav {
+            background-color: #333;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 20px;
+            margin: 0 10px;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .main-content {
+            padding: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .product {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin: 20px;
+            overflow: hidden;
+            transition: transform 0.3s;
+            width: 300px;
+        }
+
+        .product:hover {
+            transform: scale(1.05);
+        }
+
+        .product img {
+            max-width: 100%;
+            height: auto;
+            border-top-left-radius: 8px;
+            border-top-right-radius: 8px;
+        }
+
+        .product-info {
+            padding: 15px;
+        }
+
+        .product h3 {
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+
+        .product p {
+            margin: 0;
+            font-size: 16px;
+            color: #555;
+        }
+
+        .product-buttons {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 15px;
+        }
+
+        .product button {
+            flex-grow: 1;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .product button:hover {
+            background-color: #e44d26;
+            color: #fff;
+        }
+
+        .cart-notification {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: #e44d26;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 4px;
+            animation: slideInRight 0.5s ease-out;
+        }
+
+        @keyframes slideInRight {
+            from {
+                transform: translateX(100%);
+            }
+
+            to {
+                transform: translateX(0);
+            }
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Produk</h1>
+    </header>
+
+    <nav>
+        <a href="beranda.html">Beranda</a>
+        <a href="produk.html">Produk</a>
+        <a href="keranjang.html">Keranjang</a>
+        <a href="pesan.html">Pesan</a>
+        <a href="beli.html">Beli</a>
+        <a href="login.html">Login</a>
+    </nav>
+
+    <div class="main-content">
+        <div class="product">
+            <img src="produk1.jpg" alt="Produk 1">
+            <div class="product-info">
+                <h3>Produk 1</h3>
+                <p>Harga: $50</p>
+                <div class="product-buttons">
+                    <button onclick="addToCart('Produk 1', 50)">Keranjang</button>
+                    <button onclick="sendMessage('Produk 1')">Pesan</button>
+                    <button class="buy-now-button" onclick="buyNow('Produk 1', 50)">Beli</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="product">
+            <img src="produk1.jpg" alt="Produk 1">
+            <div class="product-info">
+                <h3>Produk 1</h3>
+                <p>Harga: $50</p>
+                <div class="product-buttons">
+                    <button onclick="addToCart('Produk 1', 50)">Keranjang</button>
+                    <button onclick="sendMessage('Produk 1')">Pesan</button>
+                    <button class="buy-now-button" onclick="buyNow('Produk 1', 50)">Beli</button>
+                </div>
+            </div>
+        </div>
+        <div class="product">
+            <img src="https://images.tokopedia.net/img/cache/700/VqbcmM/2020/11/11/39c80ce0-d00f-42e3-be7b-566898ea013f.jpg" alt="Produk 1">
+            <div class="product-info">
+                <h3>Produk 1</h3>
+                <p>Harga: $50</p>
+                <div class="product-buttons">
+                    <button onclick="addToCart('Produk 1', 50)">Keranjang</button>
+                    <button onclick="sendMessage('Produk 1')">Pesan</button>
+                    <button class="buy-now-button" onclick="buyNow('Produk 1', 50)">Beli</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="product">
+            <img src="produk2.jpg" alt="Produk 2">
+            <div class="product-info">
+                <h3>Produk 2</h3>
+                <p>Harga: $70</p>
+                <div class="product-buttons">
+                    <button onclick="addToCart('Produk 2', 70)">Keranjang</button>
+                    <button onclick="sendMessage('Produk 2')">Pesan</button>
+                    <button class="buy-now-button" onclick="buyNow('Produk 2', 70)">Beli</button>
+                </div>
+            </div>
+        </div>
+        <!-- Add more products as needed -->
+    </div>
+
+    <footer>
+        <p>Hak Cipta © 2023 Produk</p>
+    </footer>
+
+    <script>
+        function addToCart(productName, price) {
+            const cartNotification = document.createElement('div');
+            cartNotification.className = 'cart-notification animate__animated animate__fadeInRight';
+            cartNotification.innerText = `Produk ${productName} ditambahkan ke keranjang. Harga: $${price}`;
+
+            document.body.appendChild(cartNotification);
+
+            setTimeout(() => {
+                document.body.removeChild(cartNotification);
+            }, 3000);
+        }
+
+        function sendMessage(productName) {
+            // Add your logic for handling the "Pesan" button
+            alert(`Anda mengirim pesan untuk ${productName}.`);
+        }
+
+        function buyNow(productName, price) {
+            // Add your logic for handling the "Beli" button
+            alert(`Anda telah membeli ${productName} seharga $${price}.`);
+        }
+    </script>
+
+</body>
+
+</html>

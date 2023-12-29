@@ -1,51 +1,220 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Halaman Beranda</title>
+    <title>sinaloastore.com</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap">
     <style>
         body {
-            background-color: #070707; 
-            font-family: Arial, sans-serif; 
+            margin: 0;
+            padding: 0;
+            font-family: 'Montserrat', sans-serif;
         }
+
         header {
-            background-color: #ff0101; 
-            color: #fff; 
+            background-color: #000000;
+            color: #ffffff;
             text-align: center;
+            padding: 2em 0;
+        }
+
+        h1 {
+            font-size: 3em;
+            margin: 0;
+            letter-spacing: 3px;
+            position: relative;
+            animation: fadeInUp 1s ease-out, glow 2s infinite alternate 1s;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #17e600, 0 0 40px #e5e10b, 0 0 50px #e60073, 0 0 60px #05e1e5, 0 0 70px #fbf707;
+            }
+            to {
+                text-shadow: 0 0 20px #fff, 0 0 30px #000dfe, 0 0 40px #052af8, 0 0 50px #0d52e4, 0 0 60px #1304e1, 0 0 70px #3b4df0, 0 0 80px #0e22d6;
+            }
+        }
+
+        nav {
+            background-color: #333;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 20px;
+            margin: 0 10px;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .main-content {
             padding: 20px;
         }
-        nav {
-            background-color: #b7afaf; 
+        section {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            padding: 2em;
+        }
+
+        .product {
+            position: relative;
+            width: 300px;
+            margin: 1em;
+            background-color: #fff;
+            border: 3px solid #ddd;
+            border-radius: 5px;
+            overflow: hidden;
+            box-shadow: 0 0 10px rgb(0, 0, 0);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .product:hover {
+            transform: scale(1.05);
+        }
+
+        .product img {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+        }
+
+        .product-info {
+            padding: 1em;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.8);
+            transform: translateY(100%);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .product:hover .product-info {
+            transform: translateY(0);
+        }
+
+        .product img {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+        }
+
+        .product-info {
+            padding: 1em;
+        }
+
+
+        .main-content {
+            padding: 20px;
+        }
+
+        section#produk {
             text-align: center;
-            padding: 10px;
+            padding: 2em 0;
         }
-        nav ul {
-            list-style: none;
-            padding: 0;
+
+        h2 {
+            font-size: 2em;
+            color: #333;
+            margin: 0;
+            position: relative;
+            display: inline-block;
+            padding: 0 10px;
+            background: linear-gradient(90deg, #73747b, #000000);
+            background-size: 200% 100%;
+            background-position: 100% 0;
+            color: #fff;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.5s;
+            animation: shine 2s infinite;
         }
-        nav ul li {
-            display: inline;
-            margin: 0 15px;
+
+        h2:hover {
+            background-position: 0 0;
         }
-        a {
-            color: #000000; /* Warna tautan menu */
-            text-decoration: none;
+
+        @keyframes shine {
+            to {
+                background-position: -200% 0;
+            }
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
         }
     </style>
 </head>
+
 <body>
+
     <header>
-        <h1>SELAMAT DATANG DI WEBSITE ELCHAPO</h1>
+        <h1>SINALOASTORE</h1>
     </header>
+
     <nav>
-        <ul>
-            <li><a href="\">BERANDA</a></li>
-            <li><a href="tentang">TENTANG KAMI</a></li>
-            <li><a href="layanan">LAYANAN</a></li>
-            <li><a href="kontak">HUBUNGI KAMI</a></li>
-        </ul>
+        <a href="/">Beranda</a>
+        <a href="produk">Produk</a>
+        <a href="keranjang">Keranjang</a>
+        <a href="checkout">checkout</a>
+        <a href="login">Login</a>
+        <a href="pesan">pesan</a>
     </nav>
 
+    <div class="main-content">
+  
+
+        <section id="produk">
+            <h2>Produk Terpopuler</h2>
+            <h2>Produk Terpopuler</h2>
+        </section>
+
+
+        <section>
+            <div class="product">
+                <img src="https://cf.shopee.co.id/file/16da5e83a1ff02abef97934e85adcec1" alt="Produk 1">
+                <div class="product-info">
+                    <h2>Baju Dior - Homecare24</h2>
+                    
+                </div>
+            </div>
+    
+            <div class="product">
+                <img src="https://images.tokopedia.net/img/cache/700/VqbcmM/2021/8/7/a8cebcc1-e645-451a-8b6d-5498bd566b2e.jpg" alt="Produk 2">
+                <div class="product-info">
+                    <h2>Christian Dior Flower Embroidered Tshirt In White - Xl</h2>
+                    
+                </div>
+            </div>
+
+            <div class="product">
+                <img src="https://down-id.img.susercontent.com/file/181c84e4c09419074fde85f254001be3" alt="Produk 2">
+                <div class="product-info">
+                    <h2>Christian Dior Flower Embroidered Tshirt In White - Xl</h2>
+                    
+                </div>
+            </div>
+    
+        </section>
 </body>
+
 </html>

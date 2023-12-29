@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produk</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        header {
+            background-color: #000000;
+            color: #ffffff;
+            text-align: center;
+            padding: 2em 0;
+        }
+
+        h1 {
+            font-size: 3em;
+            margin: 0;
+            letter-spacing: 3px;
+            position: relative;
+            animation: fadeInUp 1s ease-out, glow 2s infinite alternate 1s;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #17e600, 0 0 40px #e5e10b, 0 0 50px #e60073, 0 0 60px #05e1e5, 0 0 70px #fbf707;
+            }
+            to {
+                text-shadow: 0 0 20px #fff, 0 0 30px #000dfe, 0 0 40px #052af8, 0 0 50px #0d52e4, 0 0 60px #1304e1, 0 0 70px #3b4df0, 0 0 80px #0e22d6;
+            }
+        }
+
+        nav {
+            background-color: #333;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 20px;
+            margin: 0 10px;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .main-content {
+            padding: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .product {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin: 20px;
+            overflow: hidden;
+            transition: transform 0.3s;
+            width: 300px;
+        }
+
+        .product:hover {
+            transform: scale(1.05);
+        }
+
+        .product img {
+            max-width: 100%;
+            height: auto;
+            border-top-left-radius: 8px;
+            border-top-right-radius: 8px;
+        }
+
+        .product-info {
+            padding: 15px;
+        }
+
+        .product h3 {
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+
+        .product p {
+            margin: 0;
+            font-size: 16px;
+            color: #555;
+        }
+
+        .product-buttons {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 15px;
+        }
+
+        .product button {
+            flex-grow: 1;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .product button:hover {
+            background-color: #9baff8;
+            color: #fff;
+        }
+
+        .cart-notification {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: #393736;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 4px;
+            animation: slideInRight 0.5s ease-out;
+        }
+
+        @keyframes slideInRight {
+            from {
+                transform: translateX(100%);
+            }
+
+            to {
+                transform: translateX(0);
+            }
+        }
+
+
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>SINALOASTORE</h1>
+    </header>
+
+    <nav>
+        <a href="/">Beranda</a>
+        <a href="produk">Produk</a>
+        <a href="keranjang">Keranjang</a>
+        <a href="checkout">checkout</a>
+        <a href="login">Login</a>
+        <a href="pesan">pesan</a>
+    </nav>
+
+    <div class="main-content">
+        <div class="product">
+            <img src="https://media.karousell.com/media/photos/products/2021/6/3/setelan_baju_dior_1622723402_2a73a460_progressive.jpg" alt="Produk 1">
+            <div class="product-info">
+                <h3>SETELAN BAJU DIOR</h3>
+                <p>Harga: RP. 1.7500.00</p>
+                <div class="product-buttons">
+                    <button onclick="window.location.href='keranjang'">Keranjang</button>
+                    <button onclick="window.location.href='pesan'">Pesan</button>
+                    <button class="buy-now-button" onclick="window.location.href='checkout'">Beli</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="product">
+            <img src="https://bisniz.id/wp-content/uploads/2022/08/Brand-Baju-Termahal-5.jpg" alt="Produk 1">
+            <div class="product-info">
+                <h3>DIOR SHIRT</h3>
+                <p>Harga: RP. 3.200.000</p>
+                <div class="product-buttons">
+                    <button onclick="window.location.href='keranjang'">Keranjang</button>
+                    <button onclick="window.location.href='pesan'">Pesan</button>
+                    <button class="buy-now-button" onclick="window.location.href='checkout'">Beli</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="product">
+            <img src="https://s3.bukalapak.com/img/39873810982/large/data.jpeg" alt="Produk 1">
+            <div class="product-info">
+                <h3>LENGAN PANJANG WOOL PRIA DIOR</h3>
+                <p>Harga: RP. 1.600.000</p>
+                <div class="product-buttons">
+                    <button onclick="window.location.href='keranjang'">Keranjang</button>
+                    <button onclick="window.location.href='pesan'">Pesan</button>
+                    <button class="buy-now-button" onclick="window.location.href='checkout'">Beli</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="product">
+            <img src="https://images.lvrcdn.com/Zoom76I/XBO/029_c6881ef6-510c-444d-b6c7-d8c8df79aefe.JPG" alt="Produk 1">
+            <div class="product-info">
+                <h3>Kaos Gucci Original Model Terbaru | Harga Online dan discount di Indonesia yang terbaru 2023</h3>
+                <p>Harga: RP 2.5000.00</p>
+                <div class="product-buttons">
+                    <button onclick="window.location.href='keranjang'">Keranjang</button>
+                    <button onclick="window.location.href='pesan'">Pesan</button>
+                    <button class="buy-now-button" onclick="window.location.href='checkout'">Beli</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="product">
+            <img src="https://dynamic.zacdn.com/Hv4jnEA73pU7NVBfDKl1ikyyb7s=/filters:quality(70):format(webp)/https://static-id.zacdn.com/p/crocodile-1620-9981414-1.jpg" alt="Produk 1">
+            <div class="product-info">
+                <h3>Jual Baju Kaos Gucci Model Terbaru & Kekinian di 2023 hagar discout </h3>
+                <p>Harga: RP. 1.500.000</p>
+                <div class="product-buttons">
+                    <button onclick="window.location.href='keranjang'">Keranjang</button>
+                    <button onclick="window.location.href='pesan'">Pesan</button>
+                    <button class="buy-now-button" onclick="window.location.href='checkout'">Beli</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="product">
+            <img src="https://dynamic.zacdn.com/GwFPA11GKbAsawkU6mktq8o1hfE=/filters:quality(70):format(webp)/https://static-id.zacdn.com/p/crocodile-1628-8981414-1.jpg" alt="Produk 1">
+            <div class="product-info">
+                <h3>Jual Crocodile Crocodile CIRO 0465 Red - Kaos Kerah Pria </h3>
+                <p>Harga: RP. 1.400000</p>
+                <div class="product-buttons">
+                    <button onclick="window.location.href='keranjang'">Keranjang</button>
+                    <button onclick="window.location.href='pesan'">Pesan</button>
+                    <button class="buy-now-button" onclick="window.location.href='checkout'">Beli</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="product">
+            <img src="https://images.lvrcdn.com/Big/c/2023/05/29/974d3112-bbd5-450a-8f22-e8859c25889f/9405c1fb-ae30-45e2-95ea-917e22be33e820230530094623.JPG" alt="Produk 1">
+            <div class="product-info">
+                <h3>Polo en coton gg - Gucci - Homme | Luisaviaroma</h3>
+                <p>Harga: RP. 1.800000</p>
+                <div class="product-buttons">
+                    <button onclick="window.location.href='keranjang'">Keranjang</button>
+                    <button onclick="window.location.href='pesan'">Pesan</button>
+                    <button class="buy-now-button" onclick="window.location.href='checkout'">Beli</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="product">
+            <img src="https://www.mrporter.com/variants/images/1647597278814231/in/w2000_q60.jpg" alt="Produk 1">
+            <div class="product-info">
+                <h3>GUCCI da uomo | MR PORTER HRG TERBARU 2023</h3>
+                <p>Harga: RP. 1.900000</p>
+                <div class="product-buttons">
+                    <button onclick="window.location.href='keranjang'">Keranjang</button>
+                    <button onclick="window.location.href='pesan'">Pesan</button>
+                    <button class="buy-now-button" onclick="window.location.href='checkout'">Beli</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="product">
+            <img src="https://www.mrporter.com/variants/images/1647597301035039/in/w2000_q60.jpg" alt="Produk 1">
+            <div class="product-info">
+                <h3>Polo in cotone piqué a righe GUCCI da uomo | MR PORTER</h3>
+                <p>Harga: RP. 1.780000</p>
+                <div class="product-buttons">
+                    <button onclick="window.location.href='keranjang'">Keranjang</button>
+                    <button onclick="window.location.href='pesan'">Pesan</button>
+                    <button class="buy-now-button" onclick="window.location.href='checkout'">Beli</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="product">
+            <img src="https://www.mrporter.com/variants/images/1647597278814326/in/w2000_q60.jpg" alt="Produk 1">
+            <div class="product-info">
+                <h3>Polo in jersey di cotone con inserti e logo jacquard in misto</h3>
+                <p>Harga: RP. 4.500000</p>
+                <div class="product-buttons">
+                    <button onclick="window.location.href='keranjang'">Keranjang</button>
+                    <button onclick="window.location.href='pesan'">Pesan</button>
+                    <button class="buy-now-button" onclick="window.location.href='checkout'">Beli</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="product">
+            <img src="https://www.mrporter.com/variants/images/1647597317450986/in/w2000_q60.jpg" alt="Produk 1">
+            <div class="product-info">
+                <h3>Polo in misto cotone piqué con logo ricamato GUCCI da uomo </h3>
+                <p>Harga: RP. 7.650000</p>
+                <div class="product-buttons">
+                    <button onclick="window.location.href='keranjang'">Keranjang</button>
+                    <button onclick="window.location.href='pesan'">Pesan</button>
+                    <button class="buy-now-button" onclick="window.location.href='checkout'">Beli</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="product">
+            <img src="https://www.mrporter.com/variants/images/30629810019746312/in/w2000_q60.jpg" alt="Produk 1">
+            <div class="product-info">
+                <h3>Polo in misto cotone piqué con logo ricamato GUCCI da uomo</h3>
+                <p>Harga: RP. 3.400000</p>
+                <div class="product-buttons">
+                    <button onclick="window.location.href='keranjang'">Keranjang</button>
+                    <button onclick="window.location.href='pesan'">Pesan</button>
+                    <button class="buy-now-button" onclick="window.location.href='checkout'">Beli</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="product">
+            <img src="https://www.mrporter.com/variants/images/1647597306907732/in/w2000_q60.jpg" alt="Produk 1">
+            <div class="product-info">
+                <h3>Polo in misto seta e cotone con logo jacquard GUCCI da uomo </h3>
+                <p>Harga: RP. 2.300000</p>
+                <div class="product-buttons">
+                    <button onclick="window.location.href='keranjang'">Keranjang</button>
+                    <button onclick="window.location.href='pesan'">Pesan</button>
+                    <button class="buy-now-button" onclick="window.location.href='checkout'">Beli</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="product">
+            <img src="https://storage.yandexcloud.net/cdn-prod.viled.kz/v3/original/288533qoCxS.jpg" alt="Produk 1">
+            <div class="product-info">
+                <h3>Gucci men's Web cotton polo - buy for 649600 KZT in the official</h3>
+                <p>Harga: RP. 3.500000</p>
+                <div class="product-buttons">
+                    <button onclick="window.location.href='keranjang'">Keranjang</button>
+                    <button onclick="window.location.href='pesan'">Pesan</button>
+                    <button class="buy-now-button" onclick="window.location.href='checkout'">Beli</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="product">
+            <img src="https://www.mrporter.com/variants/images/1647597278814231/in/w2000_q60.jpg" alt="Produk 1">
+            <div class="product-info">
+                <h3>GUCCI da uomo | MR PORTER HRG TERBARU 2023</h3>
+                <p>Harga: RP. 1.900000</p>
+                <div class="product-buttons">
+                    <button onclick="window.location.href='keranjang'">Keranjang</button>
+                    <button onclick="window.location.href='pesan'">Pesan</button>
+                    <button class="buy-now-button" onclick="window.location.href='checkout'">Beli</button>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="product">
+            <img src="" alt="Produk 1">
+            <div class="product-info">
+                <h3>DIOR SHIRT</h3>
+                <p>Harga: $50</p>
+                <div class="product-buttons">
+                    <button onclick="window.location.href='keranjang'">Keranjang</button>
+                    <button onclick="window.location.href='pesan'">Pesan</button>
+                    <button class="buy-now-button" onclick="window.location.href='checkout'">Beli</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="product">
+            <img src="" alt="Produk 1">
+            <div class="product-info">
+                <h3>DIOR SHIRT</h3>
+                <p>Harga: $50</p>
+                <div class="product-buttons">
+                    <button onclick="window.location.href='keranjang'">Keranjang</button>
+                    <button onclick="window.location.href='pesan'">Pesan</button>
+                    <button class="buy-now-button" onclick="window.location.href='checkout'">Beli</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="product">
+            <img src="" alt="Produk 1">
+            <div class="product-info">
+                <h3>DIOR SHIRT</h3>
+                <p>Harga: $50</p>
+                <div class="product-buttons">
+                    <button onclick="window.location.href='keranjang'">Keranjang</button>
+                    <button onclick="window.location.href='pesan'">Pesan</button>
+                    <button class="buy-now-button" onclick="window.location.href='checkout'">Beli</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="product">
+            <img src="" alt="Produk 1">
+            <div class="product-info">
+                <h3>DIOR SHIRT</h3>
+                <p>Harga: $50</p>
+                <div class="product-buttons">
+                    <button onclick="window.location.href='keranjang'">Keranjang</button>
+                    <button onclick="window.location.href='pesan'">Pesan</button>
+                    <button class="buy-now-button" onclick="window.location.href='checkout'">Beli</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="product">
+            <img src="" alt="Produk 1">
+            <div class="product-info">
+                <h3>DIOR SHIRT</h3>
+                <p>Harga: $50</p>
+                <div class="product-buttons">
+                    <button onclick="window.location.href='keranjang'">Keranjang</button>
+                    <button onclick="window.location.href='pesan'">Pesan</button>
+                    <button class="buy-now-button" onclick="window.location.href='checkout'">Beli</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="product">
+            <img src="" alt="Produk 1">
+            <div class="product-info">
+                <h3>DIOR SHIRT</h3>
+                <p>Harga: $50</p>
+                <div class="product-buttons">
+                    <button onclick="window.location.href='keranjang'">Keranjang</button>
+                    <button onclick="window.location.href='pesan'">Pesan</button>
+                    <button class="buy-now-button" onclick="window.location.href='checkout'">Beli</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="product">
+            <img src="" alt="Produk 1">
+            <div class="product-info">
+                <h3>DIOR SHIRT</h3>
+                <p>Harga: $50</p>
+                <div class="product-buttons">
+                    <button onclick="window.location.href='keranjang'">Keranjang</button>
+                    <button onclick="window.location.href='pesan'">Pesan</button>
+                    <button class="buy-now-button" onclick="window.location.href='checkout'">Beli</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="product">
+            <img src="" alt="Produk 1">
+            <div class="product-info">
+                <h3>DIOR SHIRT</h3>
+                <p>Harga: $50</p>
+                <div class="product-buttons">
+                    <button onclick="window.location.href='keranjang'">Keranjang</button>
+                    <button onclick="window.location.href='pesan'">Pesan</button>
+                    <button class="buy-now-button" onclick="window.location.href='checkout'">Beli</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="product">
+            <img src="" alt="Produk 1">
+            <div class="product-info">
+                <h3>DIOR SHIRT</h3>
+                <p>Harga: $50</p>
+                <div class="product-buttons">
+                    <button onclick="window.location.href='keranjang'">Keranjang</button>
+                    <button onclick="window.location.href='pesan'">Pesan</button>
+                    <button class="buy-now-button" onclick="window.location.href='checkout'">Beli</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="product">
+            <img src="" alt="Produk 1">
+            <div class="product-info">
+                <h3>DIOR SHIRT</h3>
+                <p>Harga: $50</p>
+                <div class="product-buttons">
+                    <button onclick="window.location.href='keranjang'">Keranjang</button>
+                    <button onclick="window.location.href='pesan'">Pesan</button>
+                    <button class="buy-now-button" onclick="window.location.href='checkout'">Beli</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="product">
+            <img src="" alt="Produk 1">
+            <div class="product-info">
+                <h3>DIOR SHIRT</h3>
+                <p>Harga: $50</p>
+                <div class="product-buttons">
+                    <button onclick="window.location.href='keranjang'">Keranjang</button>
+                    <button onclick="window.location.href='pesan'">Pesan</button>
+                    <button class="buy-now-button" onclick="window.location.href='checkout'">Beli</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="product">
+            <img src="" alt="Produk 2">
+            <div class="product-info">
+                <h3></h3>
+                <p>Harga: $70</p>
+                <div class="product-buttons">
+                    <button onclick="window.location.href='keranjang'">Keranjang</button>
+                    <button onclick="window.location.href='pesan'">Pesan</button>
+                    <button class="buy-now-button" onclick="window.location.href='checkout'">Beli</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <script>
+        function addToCart(productName, price) {
+            const cartNotification = document.createElement('div');
+            cartNotification.className = 'cart-notification animate__animated animate__fadeInRight';
+            cartNotification.innerText = `Produk ${productName} ditambahkan ke keranjang. Harga: $${price}`;
+
+            document.body.appendChild(cartNotification);
+
+            setTimeout(() => {
+                document.body.removeChild(cartNotification);
+            }, 3000);
+        }
+
+        function sendMessage(productName) {
+            alert(`Anda mengirim pesan untuk ${productName}.`);
+        }
+
+        function buyNow(productName, price) {
+            alert(`Anda telah membeli ${productName} seharga $${price}.`);
+        }
+    </script>
+
+</body>
+
+</html>

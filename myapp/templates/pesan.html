@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Halaman Pesan</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Montserrat', sans-serif;
+            background: linear-gradient(45deg, #ffffff, );
+            background-size: 400% 400%;
+            animation: gradientAnimation 10s infinite alternate, backgroundAnimation 20s linear infinite;
+        }
+
+        @keyframes gradientAnimation {
+            0% {
+                background-position: 0% 50%;
+            }
+            100% {
+                background-position: 100% 50%;
+            }
+        }
+
+        @keyframes backgroundAnimation {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        header {
+            background-color: #000000;
+            color: #ffffff;
+            text-align: center;
+            padding: 2em 0;
+        }
+
+        h1 {
+            font-size: 3em;
+            margin: 0;
+            letter-spacing: 3px;
+            position: relative;
+            animation: fadeInUp 1s ease-out, glow 2s infinite alternate 1s;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #17e600, 0 0 40px #e5e10b, 0 0 50px #e60073, 0 0 60px #05e1e5, 0 0 70px #fbf707;
+            }
+            to {
+                text-shadow: 0 0 20px #fff, 0 0 30px #000dfe, 0 0 40px #052af8, 0 0 50px #0d52e4, 0 0 60px #1304e1, 0 0 70px #3b4df0, 0 0 80px #0e22d6;
+            }
+        }
+
+        nav {
+            background-color: #333;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 20px;
+            margin: 0 10px;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .main-content {
+            padding: 20px;
+            text-align: center;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        section {
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #5f5958;
+            color: #ffffff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #333;
+        }
+
+        #floatingMessage {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1000;
+            animation: floatAnimation 5s infinite ease-in-out;
+        }
+
+        @keyframes floatAnimation {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+        #whatsappSection {
+            margin-top: 50px;
+            position: relative;
+        }
+
+        #whatsappLogo {
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 50%;
+            background-color: #333;
+            padding: 10px;
+        }
+
+        #whatsappLogo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+
+        h2.withLogo {
+            position: relative;
+            display: inline-block;
+        }
+
+        h2.withLogo:after {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(to right, transparent, #25d366, transparent);
+            bottom: -8px;
+            left: 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Halaman Pesan</h1>
+    </header>
+
+    <nav>
+        <a href="/">Beranda</a>
+        <a href="produk">Produk</a>
+        <a href="keranjang">Keranjang</a>
+        <a href="checkout">Checkout</a>
+        <a href="login">Login</a>
+        <a href="pesan">Pesan</a>
+    </nav>
+    <section class="main-content" id="whatsappSection">
+        <div id="whatsappLogo" class="animate__animated animate__fadeIn">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/598px-WhatsApp.svg.png" alt="WhatsApp Logo">
+        </div>
+        <h2 class="withLogo animate__animated animate__fadeIn">Kirim Pesan via WhatsApp</h2>
+        <div id="pesan" contenteditable="true" placeholder="Tulis pesan..."></div>
+        <br>
+        <button id="tombolKirimWhatsApp" onclick="kirimWhatsApp()" class="animate__animated animate__fadeIn">Kirim via WhatsApp</button>
+    </section>
+
+    <div id="floatingMessage" class="animate__animated animate__fadeIn">
+        Pesan Terkirim!
+    </div>
+
+    <script>
+        function kirimWhatsApp() {
+            var pesan = encodeURIComponent(document.getElementById('pesan').innerText);
+            var nomorWhatsApp = "6287852067499"; 
+
+            var linkWhatsApp = 'https://api.whatsapp.com/send?phone=' + nomorWhatsApp + '&text=' + pesan;
+            window.open(linkWhatsApp, '_blank');
+            showFloatingMessage();
+        }
+
+        function showFloatingMessage() {
+            var floatingMessage = document.getElementById('floatingMessage');
+            floatingMessage.classList.add('animate__fadeOut');
+            setTimeout(function () {
+                floatingMessage.classList.remove('animate__fadeOut');
+            }, 5000);
+        }
+    </script>
+
+</body>
+
+</html>
