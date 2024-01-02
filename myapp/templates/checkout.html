@@ -69,14 +69,15 @@
 
         section {
             padding: 20px;
+            max-width: 800px;
+            margin: 0 auto;
         }
 
         .product {
-            max-width: 600px;
-            margin: 20px auto;
             background-color: #fff;
             padding: 20px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
         }
 
         form {
@@ -120,19 +121,19 @@
 <body>
 
     <header>
-        <h1>HALAMAN CHECKOUNT</h1>
+        <h1>HALAMAN CHECKOUT</h1>
     </header>
 
     <nav>
         <a href="/">Beranda</a>
         <a href="produk">Produk</a>
         <a href="keranjang">Keranjang</a>
-        <a href="checkout">checkout</a>
+        <a href="checkout">Checkout</a>
         <a href="login">Login</a>
-        <a href="pesan">pesan</a>
+        <a href="pesan">Pesan</a>
     </nav>
 
-    <section>
+    <section class="main-content">
         <div class="product">
             <h2>Nama Produk</h2>
             <p>Deskripsi produk dan detail lainnya...</p>
@@ -156,6 +157,10 @@
         </form>
     </section>
     
+    <footer>
+      
+    </footer>
+
     <script>
         function redirectToWhatsApp() {
             var nama = document.getElementById('nama').value;
@@ -163,17 +168,13 @@
             var kartuKredit = document.getElementById('kartu-kredit').value;
             var metodePembayaran = document.getElementById('metode-pembayaran').value;
     
-            // Construct the WhatsApp message
             var whatsappMessage = 'Checkout%20Details:%0A' +
                                   'Nama:%20' + nama + '%0A' +
                                   'Alamat:%20' + alamat + '%0A' +
                                   'Nomor%20Kartu%20Kredit:%20' + kartuKredit + '%0A' +
                                   'Metode%20Pembayaran:%20' + metodePembayaran;
-    
-            // Construct the WhatsApp URL
             var whatsappURL = 'https://api.whatsapp.com/send?phone=6287852067499&text=' + whatsappMessage;
     
-            // Redirect the user to WhatsApp
             window.location.href = whatsappURL;
         }
     </script>

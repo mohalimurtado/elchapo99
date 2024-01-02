@@ -6,8 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
-
-    <!-- Google Sign-In -->
     <meta name="google-signin-client_id" content="YOUR_GOOGLE_CLIENT_ID">
 
     <style>
@@ -194,18 +192,14 @@
         <p>Hak Cipta © 2023 Halaman Login</p>
     </footer>
 
-    <!-- Google Sign-In Script -->
     <script src="https://apis.google.com/js/platform.js" async defer></script>
     <script>
         function signInWithGoogle() {
-            // Use the Google Sign-In API to handle the login with Google
             gapi.auth2.getAuthInstance().signIn();
         }
     </script>
 
-    <!-- Facebook SDK -->
     <script>
-        // Replace YOUR_FACEBOOK_APP_ID with your actual Facebook App ID
         window.fbAsyncInit = function () {
             FB.init({
                 appId: 'YOUR_FACEBOOK_APP_ID',
@@ -215,8 +209,6 @@
             });
             FB.AppEvents.logPageView();
         };
-
-        // Load the Facebook SDK asynchronously
         (function (d, s, id) {
             var js, fjs = d.getElementsByTagName(s)[0];
             if (d.getElementById(id)) return;
@@ -226,13 +218,11 @@
         }(document, 'script', 'facebook-jssdk'));
 
         function signInWithFacebook() {
-            // Use the Facebook SDK to handle the login with Facebook
             FB.login(function (response) {
                 if (response.authResponse) {
                     console.log('Welcome! Fetching your information.... ');
                     FB.api('/me', function (response) {
                         console.log('Good to see you, ' + response.name + '.');
-                        // You can perform additional actions after successful Facebook login
                         window.location.href = "/";
                     });
                 } else {

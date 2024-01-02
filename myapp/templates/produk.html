@@ -152,23 +152,17 @@
     </style>
     <script>
         function goToKeranjang() {
-            // Assuming you have stored the cart data in localStorage
             var cartData = JSON.parse(localStorage.getItem('cart')) || [];
     
-            // Convert the cartData to a JSON string and encode it for the URL
             var cartQueryString = encodeURIComponent(JSON.stringify(cartData));
     
-            // Redirect to the Keranjang page with the cart data as a parameter
             window.location.replace('keranjang?cart=' + cartQueryString);
         }
     </script>
     
     <script>
-        // Get the cart data from the URL parameter
-        var cartQueryString = window.location.search.substring(1); // Exclude the leading "?"
+        var cartQueryString = window.location.search.substring(1); 
         var cartData = cartQueryString ? JSON.parse(decodeURIComponent(cartQueryString)) : [];
-
-        // Use cartData as needed on the Keranjang page
         console.log(cartData);
     </script>
     
