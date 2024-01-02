@@ -146,9 +146,32 @@
                 transform: translateX(0);
             }
         }
+        
 
 
     </style>
+    <script>
+        function goToKeranjang() {
+            // Assuming you have stored the cart data in localStorage
+            var cartData = JSON.parse(localStorage.getItem('cart')) || [];
+    
+            // Convert the cartData to a JSON string and encode it for the URL
+            var cartQueryString = encodeURIComponent(JSON.stringify(cartData));
+    
+            // Redirect to the Keranjang page with the cart data as a parameter
+            window.location.replace('keranjang?cart=' + cartQueryString);
+        }
+    </script>
+    
+    <script>
+        // Get the cart data from the URL parameter
+        var cartQueryString = window.location.search.substring(1); // Exclude the leading "?"
+        var cartData = cartQueryString ? JSON.parse(decodeURIComponent(cartQueryString)) : [];
+
+        // Use cartData as needed on the Keranjang page
+        console.log(cartData);
+    </script>
+    
 </head>
 
 <body>
@@ -173,7 +196,7 @@
                 <h3>SETELAN BAJU DIOR</h3>
                 <p>Harga: RP. 1.7500.00</p>
                 <div class="product-buttons">
-                    <button onclick="window.location.href='keranjang'">Keranjang</button>
+                    <button onclick="goToKeranjang()">Keranjang</button>
                     <button onclick="window.location.href='pesan'">Pesan</button>
                     <button class="buy-now-button" onclick="window.location.href='checkout'">Beli</button>
                 </div>
@@ -361,189 +384,7 @@
                 </div>
             </div>
         </div>
-
-
-        <div class="product">
-            <img src="" alt="Produk 1">
-            <div class="product-info">
-                <h3>DIOR SHIRT</h3>
-                <p>Harga: $50</p>
-                <div class="product-buttons">
-                    <button onclick="window.location.href='keranjang'">Keranjang</button>
-                    <button onclick="window.location.href='pesan'">Pesan</button>
-                    <button class="buy-now-button" onclick="window.location.href='checkout'">Beli</button>
-                </div>
-            </div>
-        </div>
-
-        <div class="product">
-            <img src="" alt="Produk 1">
-            <div class="product-info">
-                <h3>DIOR SHIRT</h3>
-                <p>Harga: $50</p>
-                <div class="product-buttons">
-                    <button onclick="window.location.href='keranjang'">Keranjang</button>
-                    <button onclick="window.location.href='pesan'">Pesan</button>
-                    <button class="buy-now-button" onclick="window.location.href='checkout'">Beli</button>
-                </div>
-            </div>
-        </div>
-
-        <div class="product">
-            <img src="" alt="Produk 1">
-            <div class="product-info">
-                <h3>DIOR SHIRT</h3>
-                <p>Harga: $50</p>
-                <div class="product-buttons">
-                    <button onclick="window.location.href='keranjang'">Keranjang</button>
-                    <button onclick="window.location.href='pesan'">Pesan</button>
-                    <button class="buy-now-button" onclick="window.location.href='checkout'">Beli</button>
-                </div>
-            </div>
-        </div>
-
-        <div class="product">
-            <img src="" alt="Produk 1">
-            <div class="product-info">
-                <h3>DIOR SHIRT</h3>
-                <p>Harga: $50</p>
-                <div class="product-buttons">
-                    <button onclick="window.location.href='keranjang'">Keranjang</button>
-                    <button onclick="window.location.href='pesan'">Pesan</button>
-                    <button class="buy-now-button" onclick="window.location.href='checkout'">Beli</button>
-                </div>
-            </div>
-        </div>
-
-        <div class="product">
-            <img src="" alt="Produk 1">
-            <div class="product-info">
-                <h3>DIOR SHIRT</h3>
-                <p>Harga: $50</p>
-                <div class="product-buttons">
-                    <button onclick="window.location.href='keranjang'">Keranjang</button>
-                    <button onclick="window.location.href='pesan'">Pesan</button>
-                    <button class="buy-now-button" onclick="window.location.href='checkout'">Beli</button>
-                </div>
-            </div>
-        </div>
-
-        <div class="product">
-            <img src="" alt="Produk 1">
-            <div class="product-info">
-                <h3>DIOR SHIRT</h3>
-                <p>Harga: $50</p>
-                <div class="product-buttons">
-                    <button onclick="window.location.href='keranjang'">Keranjang</button>
-                    <button onclick="window.location.href='pesan'">Pesan</button>
-                    <button class="buy-now-button" onclick="window.location.href='checkout'">Beli</button>
-                </div>
-            </div>
-        </div>
-
-        <div class="product">
-            <img src="" alt="Produk 1">
-            <div class="product-info">
-                <h3>DIOR SHIRT</h3>
-                <p>Harga: $50</p>
-                <div class="product-buttons">
-                    <button onclick="window.location.href='keranjang'">Keranjang</button>
-                    <button onclick="window.location.href='pesan'">Pesan</button>
-                    <button class="buy-now-button" onclick="window.location.href='checkout'">Beli</button>
-                </div>
-            </div>
-        </div>
-
-        <div class="product">
-            <img src="" alt="Produk 1">
-            <div class="product-info">
-                <h3>DIOR SHIRT</h3>
-                <p>Harga: $50</p>
-                <div class="product-buttons">
-                    <button onclick="window.location.href='keranjang'">Keranjang</button>
-                    <button onclick="window.location.href='pesan'">Pesan</button>
-                    <button class="buy-now-button" onclick="window.location.href='checkout'">Beli</button>
-                </div>
-            </div>
-        </div>
-
-        <div class="product">
-            <img src="" alt="Produk 1">
-            <div class="product-info">
-                <h3>DIOR SHIRT</h3>
-                <p>Harga: $50</p>
-                <div class="product-buttons">
-                    <button onclick="window.location.href='keranjang'">Keranjang</button>
-                    <button onclick="window.location.href='pesan'">Pesan</button>
-                    <button class="buy-now-button" onclick="window.location.href='checkout'">Beli</button>
-                </div>
-            </div>
-        </div>
-
-        <div class="product">
-            <img src="" alt="Produk 1">
-            <div class="product-info">
-                <h3>DIOR SHIRT</h3>
-                <p>Harga: $50</p>
-                <div class="product-buttons">
-                    <button onclick="window.location.href='keranjang'">Keranjang</button>
-                    <button onclick="window.location.href='pesan'">Pesan</button>
-                    <button class="buy-now-button" onclick="window.location.href='checkout'">Beli</button>
-                </div>
-            </div>
-        </div>
-
-        <div class="product">
-            <img src="" alt="Produk 1">
-            <div class="product-info">
-                <h3>DIOR SHIRT</h3>
-                <p>Harga: $50</p>
-                <div class="product-buttons">
-                    <button onclick="window.location.href='keranjang'">Keranjang</button>
-                    <button onclick="window.location.href='pesan'">Pesan</button>
-                    <button class="buy-now-button" onclick="window.location.href='checkout'">Beli</button>
-                </div>
-            </div>
-        </div>
-
-        <div class="product">
-            <img src="" alt="Produk 2">
-            <div class="product-info">
-                <h3></h3>
-                <p>Harga: $70</p>
-                <div class="product-buttons">
-                    <button onclick="window.location.href='keranjang'">Keranjang</button>
-                    <button onclick="window.location.href='pesan'">Pesan</button>
-                    <button class="buy-now-button" onclick="window.location.href='checkout'">Beli</button>
-                </div>
-            </div>
-        </div>
-
     </div>
-
-
-    <script>
-        function addToCart(productName, price) {
-            const cartNotification = document.createElement('div');
-            cartNotification.className = 'cart-notification animate__animated animate__fadeInRight';
-            cartNotification.innerText = `Produk ${productName} ditambahkan ke keranjang. Harga: $${price}`;
-
-            document.body.appendChild(cartNotification);
-
-            setTimeout(() => {
-                document.body.removeChild(cartNotification);
-            }, 3000);
-        }
-
-        function sendMessage(productName) {
-            alert(`Anda mengirim pesan untuk ${productName}.`);
-        }
-
-        function buyNow(productName, price) {
-            alert(`Anda telah membeli ${productName} seharga $${price}.`);
-        }
-    </script>
-
 </body>
 
 </html>

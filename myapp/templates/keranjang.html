@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Halaman Keranjang</title>
+    <title>Keranjang</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <style>
         body {
             margin: 0;
@@ -61,150 +62,150 @@
             font-size: 16px;
             font-weight: bold;
         }
-
-        .main-content {
-            padding: 20px;
-        }
-
-        section {
-            padding: 20px;
-            text-align: center;
-            margin-bottom: 20px;
-        }
-
-        footer {
-            background-color: #333;
-            color: #fff;
-            padding: 20px;
-            text-align: center;
-        }
-
-        .cart {
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            padding: 20px;
-            margin: 10px;
+        #cart {
+            max-width: 600px;
+            margin: 20px auto;
             background-color: #fff;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
 
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
         }
 
-        th, td {
-            border: 1px solid #ddd;
-            padding: 10px;
-            text-align: left;
+        .cart-item img {
+            max-width: 80px;
+            margin-right: 10px;
         }
 
-        th {
-            background-color: #21201f;
+        .cart-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+        }
+
+        .cart-buttons button {
+            background-color: #cfb337;
             color: #fff;
-        }
-
-        button {
-            background-color: #ffffff;
-            color: #fff;
-            padding: 10px 20px;
+            padding: 8px;
             border: none;
-            border-radius: 4px;
             cursor: pointer;
+            font-size: 14px;
         }
 
-        button:hover {
-            background-color: #333;
+        .checkout-button {
+            background-color: #4caf50;
         }
+        
     </style>
+        <script>
+            // Get the cart data from the URL parameter
+            var cartQueryString = window.location.search.substring(1); // Exclude the leading "?"
+            var cartData = cartQueryString ? JSON.parse(decodeURIComponent(cartQueryString)) : [];
+    
+            // Use cartData as needed on the Keranjang page
+            console.log(cartData);
+        </script>
 </head>
 
 <body>
 
     <header>
-        <h1>KERANJANG BELANJA</h1>
+        <h1>SINALOASTORE</h1>
     </header>
 
     <nav>
         <a href="/">Beranda</a>
         <a href="produk">Produk</a>
         <a href="keranjang">Keranjang</a>
-        <a href="checkout">checkout</a>
+        <a href="checkout">Checkout</a>
         <a href="login">Login</a>
         <a href="pesan">pesan</a>
     </nav>
 
     <div class="main-content">
-        <section>
-            <h2>SILAHKAN ISI DEGAN BERAR KERANJANG ANDA </h2>
-            <div class="cart">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Nama Produk</th>
-                            <th>Harga</th>
-                            <th>Jumlah</th>
-                            <th>Total</th>
-                            <th>Aksi</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Produk 1</td>
-                            <td>$50</td>
-                            <td>2</td>
-                            <td>$100</td>
-                            <td><button>Hapus</button></td>
-                        </tr>
-                        <tr>
-                            <td>Produk 2</td>
-                            <td>$30</td>
-                            <td>1</td>
-                            <td>$30</td>
-                            <td><button>Hapus</button></td>
-                        </tr>
-                        <tr>
-                            <td>Produk 2</td>
-                            <td>$30</td>
-                            <td>1</td>
-                            <td>$30</td>
-                            <td><button>Hapus</button></td>
-                        </tr>
-                        <tr>
-                            <td>Produk 2</td>
-                            <td>$30</td>
-                            <td>1</td>
-                            <td>$30</td>
-                            <td><button>Hapus</button></td>
-                        </tr>
-                        <tr>
-                            <td>Produk 2</td>
-                            <td>$30</td>
-                            <td>1</td>
-                            <td>$30</td>
-                            <td><button>Hapus</button></td>
-                        </tr>
-                        <tr>
-                            <td>Produk 2</td>
-                            <td>$30</td>
-                            <td>1</td>
-                            <td>$30</td>
-                            <td><button>Hapus</button></td>
-                        </tr>
-                       
-                    </tbody>
-                </table>
-                <p>Total Belanja: $130</p>
-                <button><a href="checkout">Checkout</a></button>
+        <!-- Your other content goes here -->
 
+        <!-- Shopping Cart Section -->
+        <div id="cart">
+            <h2>Keranjang Belanja</h2>
+            <div id="cart-items"></div>
+            <div class="cart-buttons">
+                <button onclick="clearCart()">Hapus Keranjang</button>
+                <button class="checkout-button" onclick="redirectToCheckout()">Checkout</button>
             </div>
-        </section>
+        </div>
     </div>
 
-    <footer>
-        <p>Hak Cipta © 2023 Halaman Keranjang</p>
-    </footer>
+    <script>
+        function addToCart(productName, price) {
+            // Implement logic to add the product to the cart
+            var cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+            var newItem = { productName, price };
+            cartItems.push(newItem);
+            localStorage.setItem('cart', JSON.stringify(cartItems));
+
+            // Update the displayed cart
+            updateCartDisplay();
+        }
+
+        function updateCartDisplay() {
+            var cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+            var cartContainer = document.getElementById('cart-items');
+            cartContainer.innerHTML = '';
+
+            cartItems.forEach(item => {
+                var cartItemDiv = document.createElement('div');
+                cartItemDiv.classList.add('cart-item');
+
+                var itemName = document.createElement('span');
+                itemName.textContent = item.productName;
+
+                var itemPrice = document.createElement('span');
+                itemPrice.textContent = 'Rp. ' + item.price;
+
+                var removeButton = document.createElement('button');
+                removeButton.textContent = 'Hapus';
+                removeButton.onclick = function () {
+                    removeItemFromCart(item);
+                };
+
+                cartItemDiv.appendChild(itemName);
+                cartItemDiv.appendChild(itemPrice);
+                cartItemDiv.appendChild(removeButton);
+
+                cartContainer.appendChild(cartItemDiv);
+            });
+        }
+
+        function removeItemFromCart(item) {
+            var cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+            var updatedCart = cartItems.filter(cartItem => cartItem !== item);
+            localStorage.setItem('cart', JSON.stringify(updatedCart));
+
+            // Update the displayed cart
+            updateCartDisplay();
+        }
+
+        function clearCart() {
+            localStorage.removeItem('cart');
+
+            // Update the displayed cart
+            updateCartDisplay();
+        }
+
+        function redirectToCheckout() {
+            // Implement redirection to the checkout page
+            alert('Redirecting to Checkout Page');
+        }
+
+        // Update the displayed cart on page load
+        window.onload = updateCartDisplay;
+    </script>
 
 </body>
 
